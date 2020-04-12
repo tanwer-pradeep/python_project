@@ -1,0 +1,23 @@
+water_left = int(input("Write how many ml of water the coffee machine has:\n"))
+milk_left = int(input("Write how many ml of milk the coffee machine has:\n"))
+coffee_left = int(input("Write how many grams of coffee beans the coffee machine has:\n"))
+cups = int(input("Write how many cups of coffee you will need:\n"))
+
+a = water_left // 200
+b = milk_left // 50
+c = coffee_left // 15
+d = min(a, b, c)
+
+
+def lets_make_coffee():
+    if d == cups:
+        print("Yes, I can make that amount of coffee")
+    else:
+        difference = d - cups
+        print(f"Yes, I can make that amount of coffee (and even {difference} more than that)")
+
+
+if d >= cups:
+    lets_make_coffee()
+else:
+    print(f"No, I can make only {d} cups of coffee")
